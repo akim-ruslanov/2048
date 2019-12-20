@@ -21,8 +21,13 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ULtw7rkIMSnsyXk696gQGZuAAl" />
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -70,5 +75,15 @@
       <updated>1575147939043</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="536" y="326" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576835397111">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="536" y="326" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1368.872@0.0.1368.872" timestamp="1576835397111" />
+    <state x="385" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1576835353931">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="385" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1576835353931" />
   </component>
 </project>
