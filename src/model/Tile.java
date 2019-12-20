@@ -7,8 +7,4 @@ public class Tile {
         value = 0;
     }
 
-    public static void main(String[] args) {
-        System.out.println("hh");
-        System.out.println("FFF");
-    }
 }

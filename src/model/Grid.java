@@ -13,15 +13,16 @@ public class Grid {
                 grid[i][j] = 0;
             }
         }
-        Random random = new Random();
-        for (int i = 0; i < 2; ) {
-            int row = random.nextInt(gridDimension);
-            int col = random.nextInt(gridDimension);
-            if (available(row, col)) {
-                grid[row][col] = 2;
-                i++;
-            }
-        }
+        //uncomment to add random tiles
+//        Random random = new Random();
+//        for (int i = 0; i < 2; ) {
+//            int row = random.nextInt(gridDimension);
+//            int col = random.nextInt(gridDimension);
+//            if (available(row, col)) {
+//                grid[row][col] = 2;
+//                i++;
+//            }
+//        }
     }
 
     public int[][] getGrid() {
@@ -42,28 +43,18 @@ public class Grid {
             addRandomTile();
     }
 
+    public void addTile(int row, int col, int value) {
+        if (available(row, col)) {
+            grid[row][col] = value;
+        } else {
+            System.out.println("The tile location you have chose is occupied");
+        }
+    }
     public void moveTileUp(int row, int col) {
         if (row > 0) {
             if (grid[row][col] == grid[row-1][col] || grid[row-1][col]==0 ) {
                 grid[row-1][col] += grid[row][col];
                 grid[row][col] = 0;
-            }
-        }
-    }
-
-
-    //EFFECTS: moves all non zero tiles in the row up
-    public void fillUpEmptyTilesUpCol(int col) {
-        int emptySpace;
-        for (int i = 0; i < gridDimension-1; i++) {
-            if (grid[i][col] == 0) {
-                emptySpace = i;
-                for (int j = i+1; j<gridDimension; j++) {
-                    if (grid[j][col] == 1) {
-                        grid[emptySpace][col] = grid[j][col];
-                        grid[j][col] = 0;
-                    }
-                }
             }
         }
     }
@@ -77,41 +68,58 @@ public class Grid {
         }
     }
 
-    public static void main(String[] args) {
-        Grid a = new Grid();
+    public void moveUpAdd() {
+        int currentRow = 0;
+        for (int row = 0; row < gridDimension-1; row++) {
+            for (int col = 0; col < gridDimension - 1; col++) {
+                if (grid[row][col] != 0 && grid[row][col] == grid[row + 1][col]) {
+                    grid[row][col] += grid[row + 1][col];
+                    grid[row + 1][col] = 0;
+                }
+                currentRow += 1;
+            }
+        }
+    }
+
+    public void removeSpaces() {
+        for (int row = 0; row < gridDimension-1; row++) {
+            for (int col = 0; col < gridDimension; col++) {
+                if (grid[row][col] == 0) {
+                    grid[row][col] = grid[row+1][col];
+                    grid[row+1][col] = 0;
+                }
+            }
+        }
+    }
+
+    public void displayGrid() {
+        System.out.println("============");
         int row = 0;
         while (row < gridDimension) {
             int col = 0;
             while (col < gridDimension - 1) {
-                System.out.print(a.grid[row][col]);
+                System.out.print(grid[row][col]);
                 col++;
             }
-            System.out.println(a.grid[row][col]);
+            System.out.println(grid[row][col]);
             row++;
         }
-        System.out.println("================");
-        a.addRandomTile();
-        row = 0;
-        while (row < gridDimension) {
-            int col = 0;
-            while (col < gridDimension - 1) {
-                System.out.print(a.grid[row][col]);
-                col++;
-            }
-            System.out.println(a.grid[row][col]);
-            row++;
-        }
-        System.out.println("=============");
-        a.moveUp();
-        row = 0;
-        while (row < gridDimension) {
-            int col = 0;
-            while (col < gridDimension - 1) {
-                System.out.print(a.grid[row][col]);
-                col++;
-            }
-            System.out.println(a.grid[row][col]);
-            row++;
-        }
+        System.out.println("=================");
+    }
+
+    public static void main(String[] args) {
+        Grid a = new Grid();
+        a.displayGrid();
+        a.addTile(0,0,2);
+        a.addTile(1,0,2);
+        a.addTile(2,0,0);
+        a.addTile(3,0,4);
+        a.displayGrid();
+        a.removeSpaces();
+        a.moveUpAdd();
+        a.removeSpaces();
+        a.displayGrid();
+        a.moveUpAdd();
+        a.displayGrid();
     }
 }

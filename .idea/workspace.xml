@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="915f553e-df3c-40b3-8590-35c8a21fc5bc" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="915f553e-df3c-40b3-8590-35c8a21fc5bc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/model/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/model/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/model/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/model/Tile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Grid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Tile.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,8 +28,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1ULtw7rkIMSnsyXk696gQGZuAAl" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -33,18 +44,6 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="org.infernus.idea.checkstyle.CheckStyleConfigurable" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Grid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -66,6 +65,21 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="915f553e-df3c-40b3-8590-35c8a21fc5bc" name="Default Changelist" comment="" />
@@ -74,16 +88,87 @@
       <option name="presentableId" value="Default" />
       <updated>1575147939043</updated>
     </task>
+    <task id="LOCAL-00001" summary="Checking commit from surface">
+      <created>1576835579125</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1576835579125</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Checking commit from surface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checking commit from surface" />
   </component>
   <component name="WindowStateProjectService">
     <state x="536" y="326" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576835397111">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="536" y="326" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1368.872@0.0.1368.872" timestamp="1576835397111" />
+    <state x="338" y="31" key="CommitChangelistDialog2" timestamp="1576835577190">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="338" y="31" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1576835577190" />
+    <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1576840738724">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1576840738724" />
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1576842537588">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1576842537588" />
+    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1576842537588">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1576842537588" />
+    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1576842537588">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1576842537588" />
+    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1576842537588">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1576842537588" />
+    <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1576842000496">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.bottom/0.0.1368.872@0.0.1368.872" timestamp="1576842000496" />
+    <state width="1326" height="281" key="GridCell.Tab.1.center" timestamp="1576842000496">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.center/0.0.1368.872@0.0.1368.872" timestamp="1576842000496" />
+    <state width="1326" height="281" key="GridCell.Tab.1.left" timestamp="1576842000496">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.left/0.0.1368.872@0.0.1368.872" timestamp="1576842000496" />
+    <state width="1326" height="281" key="GridCell.Tab.1.right" timestamp="1576842000496">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state width="1326" height="281" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1576842000496" />
+    <state x="277" y="170" key="Vcs.Push.Dialog.v2" timestamp="1576835582166">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="277" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1576835582166" />
     <state x="385" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1576835353931">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="385" y="261" key="com.intellij.ide.util.TipDialog/0.0.1368.872@0.0.1368.872" timestamp="1576835353931" />
+    <state x="492" y="354" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1576835925477">
+      <screen x="0" y="0" width="1368" height="872" />
+    </state>
+    <state x="492" y="354" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.872@0.0.1368.872" timestamp="1576835925477" />
   </component>
 </project>
