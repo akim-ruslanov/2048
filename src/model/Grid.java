@@ -60,33 +60,115 @@ public class Grid {
     }
 
     public void moveUp() {
-        for (int i = 0; i < gridDimension-1; i++) {
-            for (int j = 0; j < gridDimension; j++) {
-
-                moveTileUp(i+1,j);
-            }
-        }
+        removeSpacesUp();
+        moveUpAdd();
+        removeSpacesUp();
     }
 
+    public void moveDown() {
+        removeSpaceDown();
+        moveDownAdd();
+        removeSpaceDown();
+    }
+
+    public void moveLeft() {
+        removeSpaceLeft();
+        moveLeftAdd();
+        removeSpaceLeft();
+    }
     public void moveUpAdd() {
-        int currentRow = 0;
         for (int row = 0; row < gridDimension-1; row++) {
-            for (int col = 0; col < gridDimension - 1; col++) {
+            for (int col = 0; col < gridDimension; col++) {
                 if (grid[row][col] != 0 && grid[row][col] == grid[row + 1][col]) {
                     grid[row][col] += grid[row + 1][col];
                     grid[row + 1][col] = 0;
                 }
-                currentRow += 1;
             }
         }
     }
 
-    public void removeSpaces() {
+    public void removeSpacesUp() {
         for (int row = 0; row < gridDimension-1; row++) {
             for (int col = 0; col < gridDimension; col++) {
+                if (grid[row][col] == 0 && row != gridDimension-1) {
+                    for (int r = row; r < gridDimension; r++) {
+                        if (grid[r][col] != 0) {
+                            grid[row][col] = grid[r][col];
+                            grid[r][col] = 0;
+                            r = gridDimension;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void moveDownAdd() {
+        for (int row = gridDimension-1; row > 0; row --) {
+            for (int col = 0; col < gridDimension ; col++) {
+                if (grid[row][col] != 0 && grid[row][col] == grid[row-1][col]) {
+                    grid[row][col] += grid[row-1][col];
+                    grid[row-1][col] = 0;
+                }
+            }
+        }
+    }
+
+    public void removeSpaceDown() {
+        for (int row = gridDimension-1; row > 0; row--) {
+            for (int col = 0; col < gridDimension; col++) {
+                if (grid[row][col] == 0 && row!=0) {
+                    for  (int r = row; r >= 0; r--) {
+                        if (grid[r][col] !=0) {
+                            grid[row][col] = grid[r][col];
+                            grid[r][col] = 0;
+                            r = -1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void moveLeftAdd() {
+        for (int col = 0; col < gridDimension-1; col++) {
+            for (int row = 0; row < gridDimension; row++) {
+                if (grid[row][col] != 0 || grid[row][col] == grid[row][col+1]) {
+                    grid[row][col] += grid[row][col+1];
+                    grid[row][col+1] = 0;
+                }
+            }
+        }
+    }
+
+    public void removeSpaceLeft() {
+        for (int col = 0; col < gridDimension-1; col++) {
+            for (int row = 0; row < gridDimension; row++) {
                 if (grid[row][col] == 0) {
-                    grid[row][col] = grid[row+1][col];
-                    grid[row+1][col] = 0;
+                    grid[row][col] = grid[row][col+1];
+                    grid[row][col+1] = 0;
+                }
+            }
+        }
+    }
+
+    public void moveRightAdd() {
+        for (int col = gridDimension-1; col > 0; col--) {
+            for (int row = 0; row < gridDimension; row++) {
+                if (grid[row][col] != 0 || grid[row][col] == grid[row][col-1]) {
+                    grid[row][col] += grid[row][col-1];
+                    grid[row][col-1] = 0;
+                }
+            }
+        }
+    }
+
+    public void removeSpaceRight() {
+        for (int col = gridDimension-1; col > 0; col --) {
+            for (int row = 0; row < gridDimension; row++) {
+                if (grid[row][col]==0) {
+                    grid[row][col] = grid[row][col-1];
+                    grid[row][col-1] = 0;
                 }
             }
         }
@@ -110,16 +192,15 @@ public class Grid {
     public static void main(String[] args) {
         Grid a = new Grid();
         a.displayGrid();
-        a.addTile(0,0,2);
-        a.addTile(1,0,2);
-        a.addTile(2,0,0);
-        a.addTile(3,0,4);
+        a.addTile(3,0,2);
+        a.addTile(3,1,2);
+        a.addTile(3,2,2);
+        a.addTile(3,3,2);
         a.displayGrid();
-        a.removeSpaces();
-        a.moveUpAdd();
-        a.removeSpaces();
-        a.displayGrid();
-        a.moveUpAdd();
+        a.moveRightAdd();
+        a.removeSpaceRight();
+        a.removeSpacesUp();
+        a.removeSpaceDown();
         a.displayGrid();
     }
 }
