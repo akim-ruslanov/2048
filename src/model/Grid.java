@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class Grid {
     private int[][] grid;
@@ -14,15 +15,15 @@ public class Grid {
             }
         }
         //uncomment to add random tiles
-//        Random random = new Random();
-//        for (int i = 0; i < 2; ) {
-//            int row = random.nextInt(gridDimension);
-//            int col = random.nextInt(gridDimension);
-//            if (available(row, col)) {
-//                grid[row][col] = 2;
-//                i++;
-//            }
-//        }
+        Random random = new Random();
+        for (int i = 0; i < 2; ) {
+            int row = random.nextInt(gridDimension);
+            int col = random.nextInt(gridDimension);
+            if (available(row, col)) {
+                grid[row][col] = 2;
+                i++;
+            }
+        }
     }
 
     public int[][] getGrid() {
@@ -50,6 +51,7 @@ public class Grid {
             System.out.println("The tile location you have chose is occupied");
         }
     }
+
     public void moveTileUp(int row, int col) {
         if (row > 0) {
             if (grid[row][col] == grid[row-1][col] || grid[row-1][col]==0 ) {
@@ -63,19 +65,30 @@ public class Grid {
         removeSpacesUp();
         moveUpAdd();
         removeSpacesUp();
+        addRandomTile();
     }
 
     public void moveDown() {
         removeSpaceDown();
         moveDownAdd();
         removeSpaceDown();
+        addRandomTile();
     }
 
     public void moveLeft() {
         removeSpaceLeft();
         moveLeftAdd();
         removeSpaceLeft();
+        addRandomTile();
     }
+
+    public void moveRight() {
+        removeSpaceRight();
+        moveRightAdd();
+        removeSpaceRight();
+        addRandomTile();
+    }
+
     public void moveUpAdd() {
         for (int row = 0; row < gridDimension-1; row++) {
             for (int col = 0; col < gridDimension; col++) {
@@ -117,7 +130,7 @@ public class Grid {
     public void removeSpaceDown() {
         for (int row = gridDimension-1; row > 0; row--) {
             for (int col = 0; col < gridDimension; col++) {
-                if (grid[row][col] == 0 && row!=0) {
+                if (grid[row][col] == 0) {
                     for  (int r = row; r >= 0; r--) {
                         if (grid[r][col] !=0) {
                             grid[row][col] = grid[r][col];
@@ -133,7 +146,7 @@ public class Grid {
     public void moveLeftAdd() {
         for (int col = 0; col < gridDimension-1; col++) {
             for (int row = 0; row < gridDimension; row++) {
-                if (grid[row][col] != 0 || grid[row][col] == grid[row][col+1]) {
+                if (grid[row][col] != 0 && grid[row][col] == grid[row][col+1]) {
                     grid[row][col] += grid[row][col+1];
                     grid[row][col+1] = 0;
                 }
@@ -145,8 +158,13 @@ public class Grid {
         for (int col = 0; col < gridDimension-1; col++) {
             for (int row = 0; row < gridDimension; row++) {
                 if (grid[row][col] == 0) {
-                    grid[row][col] = grid[row][col+1];
-                    grid[row][col+1] = 0;
+                    for  (int c = col; c < gridDimension; c++) {
+                        if (grid[row][c] !=0) {
+                            grid[row][col] = grid[row][c];
+                            grid[row][c] = 0;
+                            c = gridDimension;
+                        }
+                    }
                 }
             }
         }
@@ -155,7 +173,7 @@ public class Grid {
     public void moveRightAdd() {
         for (int col = gridDimension-1; col > 0; col--) {
             for (int row = 0; row < gridDimension; row++) {
-                if (grid[row][col] != 0 || grid[row][col] == grid[row][col-1]) {
+                if (grid[row][col] != 0 && grid[row][col] == grid[row][col-1]) {
                     grid[row][col] += grid[row][col-1];
                     grid[row][col-1] = 0;
                 }
@@ -167,8 +185,14 @@ public class Grid {
         for (int col = gridDimension-1; col > 0; col --) {
             for (int row = 0; row < gridDimension; row++) {
                 if (grid[row][col]==0) {
-                    grid[row][col] = grid[row][col-1];
-                    grid[row][col-1] = 0;
+                    for  (int c = col; c >= 0; c--) {
+                        if (grid[row][c] !=0) {
+                            grid[row][col] = grid[row][c];
+                            grid[row][c] = 0;
+                            displayGrid();
+                            c = -1;
+                        }
+                    }
                 }
             }
         }
@@ -190,17 +214,33 @@ public class Grid {
     }
 
     public static void main(String[] args) {
-        Grid a = new Grid();
-        a.displayGrid();
-        a.addTile(3,0,2);
-        a.addTile(3,1,2);
-        a.addTile(3,2,2);
-        a.addTile(3,3,2);
-        a.displayGrid();
-        a.moveRightAdd();
-        a.removeSpaceRight();
-        a.removeSpacesUp();
-        a.removeSpaceDown();
-        a.displayGrid();
+        Grid grid = new Grid();
+        grid.displayGrid();
+        Scanner input = new Scanner(System.in);
+        String move = input.next();
+        while (!move.equals("n")) {
+            if (move.equals("u")) {
+                grid.moveUp();
+                grid.displayGrid();
+            } else if (move.equals("r")) {
+                grid.moveRight();
+                grid.displayGrid();
+            } else if (move.equals("l")) {
+                grid.moveLeft();
+                grid.displayGrid();
+            } else if (move.equals("d")) {
+                grid.moveDown();
+                grid.displayGrid();
+            }
+            move = input.next();
+        }
+//        Grid g = new Grid();
+//        g.addTile(0,0,2);
+//        g.addTile(0,1,2);
+//        g.addTile(0,2,4);
+//        g.addTile(0,3,2);
+//        g.displayGrid();
+//        g.moveLeftAdd();
+//        g.displayGrid();
     }
 }
