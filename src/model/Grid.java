@@ -8,7 +8,7 @@ public class Grid {
     private static int gridDimension = 4;
 
     public Grid() {
-        grid = new int[4][4];
+        grid = new int[gridDimension][gridDimension];
         for (int i = 0; i < gridDimension ; i++) {
             for (int j = 0; j < gridDimension ; j++) {
                 grid[i][j] = 0;
