@@ -15,6 +15,9 @@ public class Gui extends JPanel {
     public static final int BOARD_WIDTH = 300;
     public static final int BOARD_HEIGHT = 300;
 
+    //colours
+    private Color gridColor = new Color(0xEFEECF);
+
     //check if the game is still on
     private boolean inGame = true;
 
@@ -39,14 +42,42 @@ public class Gui extends JPanel {
             @Override
             public void keyPressed(KeyEvent e) {
                 switch (e.getKeyCode()) {
-
+                    case KeyEvent.VK_UP:
+                        grid.moveUp();
+                        break;
+                    case KeyEvent.VK_DOWN:
+                        grid.moveDown();
+                        break;
+                    case KeyEvent.VK_RIGHT:
+                        grid.moveRight();
+                        break;
+                    case KeyEvent.VK_LEFT:
+                        grid.moveLeft();
+                        break;
                 }
+                repaint();
             }
         });
+    }
+
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+        drawGrid(g);
+    }
+
+    private void drawGrid(Graphics g) {
+        g.setColor(gridColor);
 
     }
+
 
     private void startGame() {
 
     }
+
+
 }
