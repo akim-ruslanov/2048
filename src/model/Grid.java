@@ -5,25 +5,30 @@ import java.util.Scanner;
 
 public class Grid {
     private int[][] grid;
-    private static int gridDimension = 4;
+    private int[][] oldGrid;
+    public static int gridDimension = 4;
 
     public Grid() {
         grid = new int[gridDimension][gridDimension];
+        oldGrid = new int[gridDimension][gridDimension];
         for (int i = 0; i < gridDimension ; i++) {
             for (int j = 0; j < gridDimension ; j++) {
                 grid[i][j] = 0;
             }
         }
+        addTile(0,0,2);
+        addTile(0,1,4);
+
         //uncomment to add random tiles
-        Random random = new Random();
-        for (int i = 0; i < 2; ) {
-            int row = random.nextInt(gridDimension);
-            int col = random.nextInt(gridDimension);
-            if (available(row, col)) {
-                grid[row][col] = 2;
-                i++;
-            }
-        }
+//        Random random = new Random();
+//        for (int i = 0; i < 2; ) {
+//            int row = random.nextInt(gridDimension);
+//            int col = random.nextInt(gridDimension);
+//            if (available(row, col)) {
+//                grid[row][col] = 2;
+//                i++;
+//            }
+//        }
     }
 
     public int[][] getGrid() {
@@ -62,31 +67,52 @@ public class Grid {
     }
 
     public void moveUp() {
+        recordOldGrid();
         removeSpacesUp();
         moveUpAdd();
         removeSpacesUp();
-        addRandomTile();
+        if (compareArrays(grid, oldGrid)) {
+
+        } else {
+            addRandomTile();
+        }
+
     }
 
     public void moveDown() {
+        recordOldGrid();
         removeSpaceDown();
         moveDownAdd();
         removeSpaceDown();
-        addRandomTile();
+        if (compareArrays(grid, oldGrid)) {
+
+        } else {
+            addRandomTile();
+        }
     }
 
     public void moveLeft() {
+        recordOldGrid();
         removeSpaceLeft();
         moveLeftAdd();
         removeSpaceLeft();
-        addRandomTile();
+        if (compareArrays(grid, oldGrid)) {
+
+        } else {
+            addRandomTile();
+        }
     }
 
     public void moveRight() {
+        recordOldGrid();
         removeSpaceRight();
         moveRightAdd();
         removeSpaceRight();
-        addRandomTile();
+        if (compareArrays(grid, oldGrid)) {
+
+        } else {
+            addRandomTile();
+        }
     }
 
     public void moveUpAdd() {
@@ -189,7 +215,6 @@ public class Grid {
                         if (grid[row][c] !=0) {
                             grid[row][col] = grid[row][c];
                             grid[row][c] = 0;
-                            displayGrid();
                             c = -1;
                         }
                     }
@@ -212,6 +237,27 @@ public class Grid {
         }
         System.out.println("=================");
     }
+
+    public void recordOldGrid() {
+        for (int r = 0; r < gridDimension; r++) {
+            for (int c = 0; c < gridDimension; c++) {
+                oldGrid[r][c] = grid[r][c];
+            }
+        }
+    }
+
+    public boolean compareArrays(int[][] a1, int[][] a2) {
+        for (int r = 0; r < gridDimension; r++) {
+            for (int c = 0; c <gridDimension; c ++) {
+                if (a1[r][c] != a2[r][c]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    //TODO: add end game method
 
     public static void main(String[] args) {
         Grid grid = new Grid();

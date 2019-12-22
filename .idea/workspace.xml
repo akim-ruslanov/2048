@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="915f553e-df3c-40b3-8590-35c8a21fc5bc" name="Default Changelist" comment="">
+    <list default="true" id="81bd2b54-ace0-4c3e-b2f9-c3a53c89d2f8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2048/model/Grid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/2048/model/Grid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Gui.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +44,19 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="org.infernus.idea.checkstyle.CheckStyleConfigurable" />
   </component>
-  <component name="RunManager">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Gui">
     <configuration name="Grid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="model.Grid" />
       <module name="2048" />
@@ -56,23 +70,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Gui" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.Gui" />
+      <module name="2048" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Gui" />
         <item itemvalue="Application.Grid" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -92,12 +108,12 @@
       <option name="project" value="LOCAL" />
       <updated>1576835579125</updated>
     </task>
-    <task id="LOCAL-00002" summary="Created a method for moving UP">
-      <created>1576842564832</created>
+    <task id="LOCAL-00002" summary="finished movement methods; working on GUI">
+      <created>1576914923867</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1576842564832</updated>
+      <updated>1576914923867</updated>
     </task>
     <option name="localTasksCounter" value="3" />
     <servers />
@@ -107,7 +123,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -115,42 +133,38 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Checking commit from surface" />
-    <MESSAGE value="Created a method for moving UP" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a method for moving UP" />
+    <MESSAGE value="finished movement methods; working on GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished movement methods; working on GUI" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="490" y="146" key="#com.intellij.ide.util.MemberChooser" timestamp="1576951758593">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="490" y="146" key="#com.intellij.ide.util.MemberChooser/0.0.1368.872@0.0.1368.872" timestamp="1576951758593" />
     <state x="536" y="326" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576835397111">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="536" y="326" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1368.872@0.0.1368.872" timestamp="1576835397111" />
-    <state x="338" y="31" key="CommitChangelistDialog2" timestamp="1576842563808">
+    <state x="338" y="31" key="CommitChangelistDialog2" timestamp="1576835577190">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="338" y="31" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1576842563808" />
+    <state x="338" y="31" key="CommitChangelistDialog2/0.0.1368.872@0.0.1368.872" timestamp="1576835577190" />
     <state x="465" y="192" key="FileChooserDialogImpl" timestamp="1576840738724">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="465" y="192" key="FileChooserDialogImpl/0.0.1368.872@0.0.1368.872" timestamp="1576840738724" />
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1576887582704">
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom" timestamp="1576842537588">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1576887582704" />
-    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1576887582703">
+    <state width="1326" height="227" key="GridCell.Tab.0.bottom/0.0.1368.872@0.0.1368.872" timestamp="1576842537588" />
+    <state width="1326" height="227" key="GridCell.Tab.0.center" timestamp="1576842537588">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1576887582703" />
-    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1576887582703">
+    <state width="1326" height="227" key="GridCell.Tab.0.center/0.0.1368.872@0.0.1368.872" timestamp="1576842537588" />
+    <state width="1326" height="227" key="GridCell.Tab.0.left" timestamp="1576842537588">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1576887582703" />
-    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1576887582703">
+    <state width="1326" height="227" key="GridCell.Tab.0.left/0.0.1368.872@0.0.1368.872" timestamp="1576842537588" />
+    <state width="1326" height="227" key="GridCell.Tab.0.right" timestamp="1576842537588">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1576887582703" />
+    <state width="1326" height="227" key="GridCell.Tab.0.right/0.0.1368.872@0.0.1368.872" timestamp="1576842537588" />
     <state width="1326" height="281" key="GridCell.Tab.1.bottom" timestamp="1576842000496">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -167,10 +181,10 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state width="1326" height="281" key="GridCell.Tab.1.right/0.0.1368.872@0.0.1368.872" timestamp="1576842000496" />
-    <state x="277" y="170" key="Vcs.Push.Dialog.v2" timestamp="1576842581812">
+    <state x="277" y="170" key="Vcs.Push.Dialog.v2" timestamp="1576835582166">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
-    <state x="277" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1576842581812" />
+    <state x="277" y="170" key="Vcs.Push.Dialog.v2/0.0.1368.872@0.0.1368.872" timestamp="1576835582166" />
     <state x="385" y="261" key="com.intellij.ide.util.TipDialog" timestamp="1576835353931">
       <screen x="0" y="0" width="1368" height="872" />
     </state>
@@ -179,9 +193,5 @@
       <screen x="0" y="0" width="1368" height="872" />
     </state>
     <state x="492" y="354" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1368.872@0.0.1368.872" timestamp="1576835925477" />
-    <state x="348" y="185" width="672" height="678" key="search.everywhere.popup" timestamp="1576952265660">
-      <screen x="0" y="0" width="1368" height="872" />
-    </state>
-    <state x="348" y="185" width="672" height="678" key="search.everywhere.popup/0.0.1368.872@0.0.1368.872" timestamp="1576952265660" />
   </component>
 </project>
