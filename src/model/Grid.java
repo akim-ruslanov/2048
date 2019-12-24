@@ -7,6 +7,12 @@ public class Grid {
     private int[][] grid;
     private int[][] oldGrid;
     public static int gridDimension = 4;
+    private boolean moveRight = true;
+    private boolean moveLeft = true;
+    private boolean moveUp = true;
+    private boolean moveDown = true;
+
+
 
     public Grid() {
         grid = new int[gridDimension][gridDimension];
@@ -57,14 +63,6 @@ public class Grid {
         }
     }
 
-    public void moveTileUp(int row, int col) {
-        if (row > 0) {
-            if (grid[row][col] == grid[row-1][col] || grid[row-1][col]==0 ) {
-                grid[row-1][col] += grid[row][col];
-                grid[row][col] = 0;
-            }
-        }
-    }
 
     public void moveUp() {
         recordOldGrid();
@@ -72,8 +70,9 @@ public class Grid {
         moveUpAdd();
         removeSpacesUp();
         if (compareArrays(grid, oldGrid)) {
-
+            moveUp = false;
         } else {
+            moveUp = true;
             addRandomTile();
         }
 
@@ -85,8 +84,9 @@ public class Grid {
         moveDownAdd();
         removeSpaceDown();
         if (compareArrays(grid, oldGrid)) {
-
+            moveDown = false;
         } else {
+            moveDown = true;
             addRandomTile();
         }
     }
@@ -97,8 +97,9 @@ public class Grid {
         moveLeftAdd();
         removeSpaceLeft();
         if (compareArrays(grid, oldGrid)) {
-
+            moveLeft = false;
         } else {
+            moveLeft = true;
             addRandomTile();
         }
     }
@@ -109,8 +110,9 @@ public class Grid {
         moveRightAdd();
         removeSpaceRight();
         if (compareArrays(grid, oldGrid)) {
-
+            moveRight = false;
         } else {
+            moveRight = true;
             addRandomTile();
         }
     }
@@ -257,7 +259,9 @@ public class Grid {
         return true;
     }
 
-    //TODO: add end game method
+    public boolean endGame() {
+        return moveRight && moveLeft && moveUp && moveDown;
+    }
 
     public static void main(String[] args) {
         Grid grid = new Grid();
